@@ -1,0 +1,28 @@
+<div class="animated bounceInUp">
+	<div class="container" ng-controller="LoginController">
+		<form name="login_form" novalidate ng-submit="loginForm()" class="form-signin" role="form">
+			<div class="row">
+				<h2 class="form-singin-heading">Login first</h2>
+				<div class="row">
+					<input class="form-control" type="email" name="email" ng-model="email" ensure-unique="email" required ng-minlength=3 ng-maxlength=50 placeholder="email" />
+					<div class="error" ng-show="login_form.email.$dirty && login_form.email.$invalid">
+						<small class="error" ng-show="login_form.email.$error.required">Your email id required.</small>						
+						<small class="error" ng-show="login_form.email.$error.minlength">Your email length is too small.</small>						
+						<small class="error" ng-show="login_form.email.$error.maxlength">Your email length is too big.</small>						
+						<small class="error" ng-show="login_form.email.$error.email">Your email is not right.</small>
+					</div>
+				</div>
+				<div class="row">
+					<input class="form-control" type="password" name="password" ng-model="password" required ng-minlength=3 ng-maxlength=20 placeholder="Password" />
+					<div class="error" ng-show="login_form.password.$dirty && login_form.password.$invalid">
+						<small class="error" ng-show="login_form.password.$error.required">Your password id required.</small>						
+						<small class="error" ng-show="login_form.password.$error.minlength">Your password id required.</small>						
+						<small class="error" ng-show="login_form.password.$error.maxlength">Your password id required.</small>						
+						<small class="error" ng-show="login_form.password.$error.password">Your password id required.</small>
+					</div>
+				</div>
+				<button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="login_form.$invalid" class="button radius">Login</button>				
+			</div>
+		</form>			
+	</div>
+</div>

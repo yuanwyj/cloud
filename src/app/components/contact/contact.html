@@ -1,0 +1,9 @@
+<ul class="list-group" >
+    <li class="list-group-item clearfix" ng-repeat="item in vm.list">
+        <h4 class="pull-left mr-xl">{{item.name.first}} {{item.name.last}}</h4>
+        <div class="pull-right text-right">
+            <a href="mailto:{{item.email}}">{{item.email}}</a>
+            <div>{{item.phone}}</div>
+        </div>
+    </li>
+</ul>
